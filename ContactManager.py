@@ -13,7 +13,11 @@ class ContactManager:
         pass
 
     def deleteContact(self,name):
-        pass
+        index = self.searchContact(name)
+        if index != -1:
+            self.contacts.pop(index)
+        else:
+            print("no contacts present in this name")
 
     def searchContact(self,name):
         i = 0
