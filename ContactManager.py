@@ -10,19 +10,28 @@ class ContactManager:
         with open(self.filename,'w+') as f:
             f.writelines(self.contacts)
     def addContact(self,contact):
-        c=contact.name+','+contact.mail+','+contact.phone
-        self.contacts.append(contact)
+        self.contacts.append(str(contact))
         self.save_contacts()
         print("Contact Added Successfully!!")
 
     def deleteContact(self,name):
-        pass
+        index = self.searchContact(name)
+        if index != -1:
+            self.contacts.pop(index)
+        else:
+            print("no contacts present in this name")
 
     def searchContact(self,name):
-        pass
+        i = 0
+        for contact in self.contacts:
+            if name in contact.split(',')[0]:
+                return i 
+            i+=1
+        return -1
 
-    def displayContact(self):
-        pass
+    def displayContacts(self):
+        for contact in self.contacts:
+            print(contact.strip())
 
     def updateContact(self):
         pass
