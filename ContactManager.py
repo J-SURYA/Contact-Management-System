@@ -33,7 +33,23 @@ class ContactManager:
         for contact in self.contacts:
             print(contact.strip())
 
-    def updateContact(self):
-        pass
+    def updateContact(self,name):
+        n = len(self.contacts)
+        if(len(self.contacts) == 0):
+            print("Your contact list is empty!")
+            return
+        i = self.searchContact(name)
+        if(i != -1):
+            ct = list(map(str,self.contacts[i].split(',')))
+            if(ct[0] == name):
+                print("Please enter the details of new contact:")
+                newPhone = str(input("Phone :"))
+                newMail = str(input("Mail :"))
+                newContact = Contact(name,newMail,newPhone)
+                self.contacts.pop(i)
+                self.addContact(newContact)
+                print("Updated Successfully")
+        else:
+            print("Given contact doesn't exist.")
 
         
