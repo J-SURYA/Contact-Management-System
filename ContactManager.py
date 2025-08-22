@@ -10,7 +10,9 @@ class ContactManager:
         with open(self.filename,'w+') as f:
             f.writelines(self.contacts)
     def addContact(self,contact):
-        pass
+        self.contacts.append(str(contact))
+        self.save_contacts()
+        print("Contact Added Successfully!!")
 
     def deleteContact(self,name):
         index = self.searchContact(name)
