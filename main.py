@@ -12,12 +12,12 @@ def main():
         print("5. Delete Contact")
         print("6. Exit")
 
-        choice = input("Enter choice: ")
+        choice = input("Enter choice: ").strip()
 
         if choice == "1":
-            name = input("Enter name: ")
-            phone = input("Enter phone: ")
-            email = input("Enter email: ")
+            name = input("Enter name: ").strip()
+            phone = input("Enter phone: ").strip()
+            email = input("Enter email: ").strip()
             contact = Contact(name, phone, email)
             manager.addContact(contact)
 
@@ -25,15 +25,15 @@ def main():
             manager.displayContacts()
 
         elif choice == "3":
-            name = input("Enter name to search: ")
+            name = input("Enter name to search: ").strip()
             manager.searchContact(name)
 
         elif choice == "4":
-            name = input("Enter name to update: ")
+            name = input("Enter name to update: ").strip()
             manager.updateContact(name)
 
         elif choice == "5":
-            name = input("Enter name to delete: ")
+            name = input("Enter name to delete: ").strip()
             manager.deleteContact(name)
 
         elif choice == "6":
