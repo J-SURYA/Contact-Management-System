@@ -5,4 +5,8 @@ class Contact:
         self.phone = phone
 
     def __str__(self):
-        return f'Contact(name = {self.name},phone = {self.phone}, mail = {self.mail})'
+        return f'{self.name},{self.mail},{self.phone}'
+    
+    def from_str(contact_str):
+        name,mail,phone = contact_str.strip().split(",")
+        return Contact(name,mail,phone)
