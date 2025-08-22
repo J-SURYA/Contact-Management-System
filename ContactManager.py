@@ -16,10 +16,16 @@ class ContactManager:
         pass
 
     def searchContact(self,name):
-        pass
+        i = 0
+        for contact in self.contacts:
+            if name in contact.split(',')[0]:
+                return i 
+            i+=1
+        return -1
 
     def displayContacts(self):
-        pass
+        for contact in self.contacts:
+            print(contact.strip())
 
     def updateContact(self):
         pass
