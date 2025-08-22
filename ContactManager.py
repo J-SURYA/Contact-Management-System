@@ -18,7 +18,7 @@ class ContactManager:
     def searchContact(self,name):
         pass
 
-    def displayContact(self):
+    def displayContacts(self):
         pass
 
     def updateContact(self):
