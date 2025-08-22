@@ -10,6 +10,7 @@ class ContactManager:
         with open(self.filename,'w+') as f:
             f.writelines(self.contacts)
     def addContact(self,contact):
+        c=contact.name+','+contact.mail+','+contact.phone
         self.contacts.append(contact)
         self.save_contacts()
         print("Contact Added Successfully!!")
